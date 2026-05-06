@@ -3,7 +3,7 @@ const playBtn = document.getElementById("play-btn");
 const progressBar = document.getElementById("progress-bar");
 const albumArt = document.getElementById("album-art");
 
-// FUNKCJA DISCORD - WPISANA NA SZTYWNO
+// FUNKCJA DISCORD - LINK WPISANY NA SZTYWNO DLA PEWNOŚCI
 async function updateDiscord() {
     try {
         const response = await fetch("https://lanyard.rest");
@@ -60,13 +60,6 @@ playBtn.addEventListener('click', () => {
     }
 });
 
-document.body.addEventListener('click', () => {
-    if (audio.paused) {
-        audio.play();
-        playBtn.classList.replace('fa-play', 'fa-pause');
-        albumArt.style.animationPlayState = 'running';
-    }
-}, { once: true });
-
+// START
 updateDiscord();
 setInterval(updateDiscord, 30000);
