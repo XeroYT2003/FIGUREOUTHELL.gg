@@ -2,16 +2,16 @@ const DISCORD_ID = "834059482761134090";
 
 async function updateDiscord() {
     try {
-        // Poprawiony link API
-        const response = await fetch(`https://lanyard.rest{DISCORD_ID}`);
+        // Wpisane na sztywno, żeby nie było błędu w adresie
+        const response = await fetch("https://lanyard.rest");
         const data = await response.json();
         
         if (data.success) {
             const user = data.data.discord_user;
             const status = data.data.discord_status;
 
-            // Poprawiony link do avatara
-            const avatarUrl = `https://discordapp.com{user.id}/${user.avatar}.webp?size=256`;
+            // Link do avatara (://discordapp.com)
+            const avatarUrl = `https://://discordapp.com/avatars/${user.id}/${user.avatar}.webp?size=256`;
             
             document.getElementById('discord-avatar').src = avatarUrl;
             document.getElementById('notif-avatar').src = avatarUrl;
@@ -22,9 +22,10 @@ async function updateDiscord() {
             document.getElementById('status-dot').style.background = colors[status] || colors.offline;
         }
     } catch (e) {
-        console.error("Błąd wczytywania profilu:", e);
+        console.error("Błąd Lanyard:", e);
     }
 }
+
 
 const audio = document.getElementById("myAudio");
 const playBtn = document.getElementById("play-btn");
