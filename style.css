@@ -7,21 +7,17 @@ body, html { height: 100%; font-family: 'Segoe UI', sans-serif; background-color
 .profile-card { width: 350px; text-align: center; animation: float 5s ease-in-out infinite; z-index: 2; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
-
 .avatar-container { position: relative; display: inline-block; margin-bottom: 10px; }
 .avatar { width: 90px; height: 90px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); filter: grayscale(100%); object-fit: cover; background: #111; }
 .status-dot { position: absolute; bottom: 5px; right: 5px; width: 18px; height: 18px; border-radius: 50%; border: 3px solid #000; background: #747f8d; }
 
 h1 { font-size: 20px; font-weight: 400; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 5px; }
 .status-text { font-size: 10px; color: #555; margin-bottom: 15px; }
-.views-counter { margin-bottom: 20px; opacity: 0.5; display: flex; align-items: center; justify-content: center; gap: 5px; }
-
 
 .notification { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 12px; display: flex; align-items: center; gap: 12px; margin-bottom: 20px; text-align: left; }
 .notif-img { width: 35px; height: 35px; border-radius: 6px; filter: grayscale(100%); background: #222; }
 .notif-content b { font-size: 12px; display: block; color: #ddd; }
 .notif-content span { font-size: 10px; color: #444; }
-
 
 .music-player { background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 15px; padding: 15px; }
 .player-upper { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
@@ -31,10 +27,8 @@ h1 { font-size: 20px; font-weight: 400; letter-spacing: 4px; text-transform: upp
 
 .song-info { flex: 1; text-align: left; }
 .song-info b { font-size: 13px; display: block; margin-bottom: 6px; }
-
 .progress-box { display: flex; align-items: center; gap: 8px; }
 .progress-box span { font-size: 10px; color: #444; min-width: 25px; }
-
 
 input[type=range] { -webkit-appearance: none; appearance: none; background: transparent; cursor: pointer; }
 #progress-bar { flex: 1; height: 1px; background: rgba(255, 255, 255, 0.1); outline: none; }
