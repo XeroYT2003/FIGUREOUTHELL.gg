@@ -3,10 +3,10 @@ const playBtn = document.getElementById("play-btn");
 const progressBar = document.getElementById("progress-bar");
 const albumArt = document.getElementById("album-art");
 
-// FUNKCJA DISCORD - LINK WPISANY NA SZTYWNO DLA PEWNOŚCI
+// 1. DISCORD API - LINK WPISANY NA SZTYWNO DLA PEWNOŚCI
 async function updateDiscord() {
     try {
-        const response = await fetch("https://lanyard.rest");
+        const response = await fetch("https://api.lanyard.rest/v1/users/834059482761134090");
         const data = await response.json();
         
         if (data.success) {
@@ -24,13 +24,15 @@ async function updateDiscord() {
             // Kolory statusu
             const colors = { online: '#43b581', idle: '#faa61a', dnd: '#f04747', offline: '#747f8d' };
             document.getElementById('status-dot').style.background = colors[status] || colors.offline;
+            
+            console.log("Discord załadowany!");
         }
     } catch (e) {
-        console.error("Błąd Lanyard:", e);
+        console.error("Błąd wczytywania profilu:", e);
     }
 }
 
-// LOGIKA MUZYKI
+// 2. LOGIKA AUDIO
 function formatTime(s) {
     if (isNaN(s)) return "0:00";
     let m = Math.floor(s / 60);
