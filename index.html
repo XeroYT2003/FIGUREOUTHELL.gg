@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIGUREOUTHELL | Bio</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="grain"></div>
+
+    <div class="profile-card">
+        <div class="avatar-container">
+           
+            <img src="" class="avatar" id="discord-avatar">
+            <div class="status-dot" id="status-dot"></div>
+        </div>
+        
+        <h1 id="discord-name">FIGUREOUTHELL</h1>
+        <div class="status-text">✦ . ˙ ̟ ࣪ 𖤐</div>
+
+        <div class="notification">
+            <img src="" class="notif-img" id="notif-avatar">
+            <div class="notif-content">
+                <b id="notif-user">FIGUREOUTHELL 🤍</b>
+                <span>Pozostane</span>
+            </div>
+        </div>
+
+        <div class="music-player">
+            <div class="player-upper">
+                <img src="https://pinimg.com" id="album-art" class="rotating">
+                <div class="song-info">
+                    <b>flawless</b>
+                    <div class="progress-box">
+                        <span id="current-time">0:00</span>
+                        <input type="range" id="progress-bar" min="0" max="100" value="0">
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-lower">
+                <div class="controls-main">
+                    <i class="fa-solid fa-backward-step"></i>
+                    <i class="fa-solid fa-play" id="play-btn"></i>
+                    <i class="fa-solid fa-forward-step"></i>
+                </div>
+                <div class="volume-box">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="myAudio" loop>
+        <source src="audio/dDIEvd_beat.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
