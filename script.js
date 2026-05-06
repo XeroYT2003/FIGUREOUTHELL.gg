@@ -3,7 +3,7 @@ const playBtn = document.getElementById("play-btn");
 const progressBar = document.getElementById("progress-bar");
 const albumArt = document.getElementById("album-art");
 
-// FUNKCJA DISCORD - LINK WPISANY NA SZTYWNO DLA PEWNOŚCI
+// FUNKCJA DISCORD - LINK POPRAWIONY I WPISANY BEZPOŚREDNIO
 async function updateDiscord() {
     try {
         const response = await fetch("https://lanyard.rest");
@@ -12,6 +12,8 @@ async function updateDiscord() {
         if (data.success) {
             const user = data.data.discord_user;
             const status = data.data.discord_status;
+            
+            // Tworzenie linku do zdjęcia profilowego
             const avatarUrl = "https://discordapp.com" + user.id + "/" + user.avatar + ".webp?size=256";
             
             document.getElementById('discord-avatar').src = avatarUrl;
@@ -19,6 +21,7 @@ async function updateDiscord() {
             document.getElementById('discord-name').innerText = user.username.toUpperCase();
             document.getElementById('notif-user').innerText = user.username + " 🤍";
 
+            // Kolory statusu (online, idle, dnd, offline)
             const colors = { online: '#43b581', idle: '#faa61a', dnd: '#f04747', offline: '#747f8d' };
             document.getElementById('status-dot').style.background = colors[status] || colors.offline;
         }
